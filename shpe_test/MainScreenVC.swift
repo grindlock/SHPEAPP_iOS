@@ -9,13 +9,22 @@
 import UIKit
 
 class MainScreenVC: UIViewController {
+    @IBOutlet weak var email: UITextField!
     
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func pressedLogin(_ sender: Any) {
+        
+        //func call to check email validity
+        //func call to check password meets the required meet
+        
+        //login to the server
+        
+        //if state
         performSegue(withIdentifier: "login", sender: "")
         
     }
