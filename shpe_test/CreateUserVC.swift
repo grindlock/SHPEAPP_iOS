@@ -74,6 +74,10 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func registerPressed(_ sender: AnyObject){
+        performSegue(withIdentifier: "register", sender: "")
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
