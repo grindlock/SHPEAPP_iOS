@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -247,13 +247,14 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="AXI-bP-5QC" id="qEe-Ij-eBz"/>
+                        <outlet property="emailLbl" destination="JLD-Io-bcS" id="Jx8-sS-Rs6"/>
                         <outlet property="password" destination="Hbb-g4-350" id="FFF-bU-054"/>
                         <segue destination="c0V-1S-Cb1" kind="show" identifier="login" id="RB0-I1-n3P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-403" y="36"/>
+            <point key="canvasLocation" x="-1041" y="18"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="dyo-ld-Jol">
@@ -264,7 +265,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SCm-ZC-N6O"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="odI-X7-wXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J64-8j-dsh">
@@ -297,7 +298,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OEd-dW-Zun"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i8p-aQ-Wsc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-QD-Xx9">
@@ -330,7 +331,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wa0-5G-GS5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Wh-Le-zbm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-9h-awb">
@@ -351,7 +352,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="296" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-ei-utY">
-                                <rect key="frame" x="0.0" y="50" width="320" height="531"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="469"/>
                                 <color key="backgroundColor" red="1" green="0.83079475160000005" blue="0.25842010970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="296" id="ZFo-eO-bv4" customClass="FeedCell" customModule="shpe_test" customModuleProvider="target">
@@ -456,7 +457,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MR6-KF-c4C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L4d-W8-zuT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ip-MZ-RPq">
@@ -1013,14 +1014,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9b6-aq-s79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1414" y="37"/>
+            <point key="canvasLocation" x="-731" y="999"/>
         </scene>
     </scenes>
     <resources>
         <image name="knight" width="409" height="401"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gCn-06-WdB"/>
+        <segue reference="RB0-I1-n3P"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

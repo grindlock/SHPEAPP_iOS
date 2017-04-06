@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490700E01E7C5673005C4F63 /* RoundCornersAndShadowForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490700DF1E7C5673005C4F63 /* RoundCornersAndShadowForView.swift */; };
 		490700E21E7CAAAB005C4F63 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490700E11E7CAAAB005C4F63 /* FeedCell.swift */; };
+		493EFFC21E85DD30001B25AF /* ValidationFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFFC11E85DD2F001B25AF /* ValidationFunctions.swift */; };
 		4942B8D51E63DFD700DEAABB /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942B8D41E63DFD700DEAABB /* NewsFeedVC.swift */; };
 		4942B8D71E63E01100DEAABB /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942B8D61E63E01100DEAABB /* SecondVC.swift */; };
 		495150BB1E70E07C00C984D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495150BA1E70E07C00C984D4 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		490700DF1E7C5673005C4F63 /* RoundCornersAndShadowForView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornersAndShadowForView.swift; sourceTree = "<group>"; };
 		490700E11E7CAAAB005C4F63 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		493EFFC11E85DD2F001B25AF /* ValidationFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationFunctions.swift; sourceTree = "<group>"; };
 		4942B8D41E63DFD700DEAABB /* NewsFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		4942B8D61E63E01100DEAABB /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		495150BA1E70E07C00C984D4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				49CE3FFE1E65169000CD5A7D /* RoundButtonWithShadow.swift */,
+				493EFFC11E85DD2F001B25AF /* ValidationFunctions.swift */,
 				49CE40001E65300900CD5A7D /* TextFieldCustom.swift */,
 				490700DF1E7C5673005C4F63 /* RoundCornersAndShadowForView.swift */,
 				490700E11E7CAAAB005C4F63 /* FeedCell.swift */,
@@ -180,6 +183,7 @@
 				499FF3331E5A5FBD00CE6E6B /* CreateUserVC.swift in Sources */,
 				499FF3231E5A3B3300CE6E6B /* MainScreenVC.swift in Sources */,
 				4942B8D51E63DFD700DEAABB /* NewsFeedVC.swift in Sources */,
+				493EFFC21E85DD30001B25AF /* ValidationFunctions.swift in Sources */,
 				49972CD41E831269003CEB1A /* ToolbarOnKeyboard.swift in Sources */,
 				499FF3211E5A3B3300CE6E6B /* AppDelegate.swift in Sources */,
 				490700E01E7C5673005C4F63 /* RoundCornersAndShadowForView.swift in Sources */,
