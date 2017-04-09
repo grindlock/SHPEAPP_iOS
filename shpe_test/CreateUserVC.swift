@@ -75,7 +75,37 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     @IBAction func registerPressed(_ sender: AnyObject){
-        performSegue(withIdentifier: "register", sender: "")
+        
+        if !ValidationFunctions().passwordIsValid(textField: pass1.text!, controller: self) && !ValidationFunctions().passwordIsValid(textField: pass2.text!, controller: self){
+            pass1.borderWidth = 2
+            pass1.cornerRadius = 5
+            pass1.borderColor = UIColor.red
+            
+            pass2.borderWidth = 2
+            pass2.cornerRadius = 5
+            pass2.borderColor = UIColor.red
+            
+            if !ValidationFunctions().passwordIsSame(textField1: pass1.text!, textField2: pass2.text!, controller: self){
+                pass1.borderWidth = 2
+                pass1.cornerRadius = 5
+                pass1.borderColor = UIColor.red
+                
+                pass2.borderWidth = 2
+                pass2.cornerRadius = 5
+                pass2.borderColor = UIColor.red
+            }
+            
+        }
+        
+        if ValidationFunctions().emailIsEmpty(email: email.text! , controller: self){
+            email.borderWidth = 2
+            email.cornerRadius = 5
+            email.borderColor = UIColor.red
+        }
+        
+        else{
+            performSegue(withIdentifier: "register", sender: "")
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -183,6 +213,7 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         i = textFields.index(of: textField)!
         
     }
+    
     
     
 }

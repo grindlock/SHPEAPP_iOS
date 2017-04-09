@@ -44,15 +44,19 @@ func passwordIsValid(textField:String, controller:UIViewController)->Bool{
     return true
 }
 
-/*func passwordSpecials(textField:String)->Bool{
+    //Ths function checks if two passwords match
+    func passwordIsSame(textField1: String, textField2: String, controller:UIViewController)->Bool{
+        let password1 = textField1
+        let password2 = textField2
+        
+        if password1 != password2{
+            errorsMessages(error: 4, controller: controller)
+            return false
+        }
 
-    if textField.contains("!#$%^&*"){
         return true
-    }
-    
-    return false
+}
 
-}*/
 
 func errorsMessages(error:Int, controller:UIViewController){
         var message:String = ""
@@ -64,6 +68,8 @@ func errorsMessages(error:Int, controller:UIViewController){
     message = "Password is empty or to short. The length needs to be between 8 and 16 characters."
     case 3: title = "Password"
         message = "Password needs at least 1 Uppercase letter, at least 1 number and at least 1 special character (!@#$&)."
+    case 4: title = "Password Match"
+        message = " Passwords do not match."
     default:message = ""
     
     }

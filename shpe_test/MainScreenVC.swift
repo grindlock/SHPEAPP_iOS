@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class MainScreenVC: UIViewController {
    
@@ -33,7 +34,7 @@ class MainScreenVC: UIViewController {
         email.rightView = label
         email.rightViewMode = .always
         
-        
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
     }
     
@@ -61,8 +62,7 @@ class MainScreenVC: UIViewController {
         }
         
         
-        //func call to check email validity
-        //func call to check password meets the required meet
+        
         
         //login to the server
         
@@ -84,6 +84,5 @@ class MainScreenVC: UIViewController {
         
         return true
     }
-
 }
 
