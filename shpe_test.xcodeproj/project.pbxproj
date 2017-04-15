@@ -12,6 +12,7 @@
 		493EFFC21E85DD30001B25AF /* ValidationFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFFC11E85DD2F001B25AF /* ValidationFunctions.swift */; };
 		4942B8D51E63DFD700DEAABB /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942B8D41E63DFD700DEAABB /* NewsFeedVC.swift */; };
 		4942B8D71E63E01100DEAABB /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942B8D61E63E01100DEAABB /* SecondVC.swift */; };
+		49469BBB1EA0469600618A39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49469BBA1EA0469600618A39 /* GoogleService-Info.plist */; };
 		495150BB1E70E07C00C984D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495150BA1E70E07C00C984D4 /* Main.storyboard */; };
 		49972CD41E831269003CEB1A /* ToolbarOnKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49972CD31E831269003CEB1A /* ToolbarOnKeyboard.swift */; };
 		499FF3211E5A3B3300CE6E6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FF3201E5A3B3300CE6E6B /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		493EFFC11E85DD2F001B25AF /* ValidationFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationFunctions.swift; sourceTree = "<group>"; };
 		4942B8D41E63DFD700DEAABB /* NewsFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		4942B8D61E63E01100DEAABB /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		49469BBA1EA0469600618A39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		495150BA1E70E07C00C984D4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		49972CD31E831269003CEB1A /* ToolbarOnKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarOnKeyboard.swift; sourceTree = "<group>"; };
 		499FF31D1E5A3B3300CE6E6B /* shpe_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shpe_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				495150BA1E70E07C00C984D4 /* Main.storyboard */,
 				499FF3291E5A3B3400CE6E6B /* LaunchScreen.storyboard */,
 				499FF32C1E5A3B3400CE6E6B /* Info.plist */,
+				49469BBA1EA0469600618A39 /* GoogleService-Info.plist */,
 			);
 			path = shpe_test;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				499FF32B1E5A3B3400CE6E6B /* LaunchScreen.storyboard in Resources */,
+				49469BBB1EA0469600618A39 /* GoogleService-Info.plist in Resources */,
 				499FF3281E5A3B3400CE6E6B /* Assets.xcassets in Resources */,
 				495150BB1E70E07C00C984D4 /* Main.storyboard in Resources */,
 			);
@@ -383,7 +387,7 @@
 				INFOPLIST_FILE = shpe_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.serge.shpeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shpeucf.shpeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -398,7 +402,7 @@
 				INFOPLIST_FILE = shpe_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.serge.shpeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shpeucf.shpeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
