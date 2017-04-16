@@ -12,7 +12,7 @@
         <!--Main ScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainScreenVC" customModule="shpe_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="MainScreenVC" customModule="shpe_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1041" y="18"/>
+            <point key="canvasLocation" x="-186" y="12"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="dyo-ld-Jol">
@@ -265,7 +265,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SCm-ZC-N6O"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="odI-X7-wXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J64-8j-dsh">
@@ -298,7 +298,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OEd-dW-Zun"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i8p-aQ-Wsc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-QD-Xx9">
@@ -331,7 +331,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wa0-5G-GS5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Wh-Le-zbm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-9h-awb">
@@ -348,11 +348,18 @@
                                 </constraints>
                                 <color key="barTintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="swV-Ij-MPK"/>
+                                    <navigationItem title="Title" id="swV-Ij-MPK">
+                                        <barButtonItem key="rightBarButtonItem" title="Sing Out" id="O26-Sp-Gt0">
+                                            <color key="tintColor" red="0.31438050270000001" green="0.3174931809" blue="0.3174931809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="logOut:" destination="gz8-DC-yUw" id="q0D-fO-Rrr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="296" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-ei-utY">
-                                <rect key="frame" x="0.0" y="50" width="320" height="531"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="469"/>
                                 <color key="backgroundColor" red="1" green="0.83079475160000005" blue="0.25842010970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="296" id="ZFo-eO-bv4" customClass="FeedCell" customModule="shpe_test" customModuleProvider="target">
@@ -457,7 +464,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MR6-KF-c4C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L4d-W8-zuT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ip-MZ-RPq">
@@ -1021,7 +1028,7 @@
         <image name="knight" width="409" height="401"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gCn-06-WdB"/>
+        <segue reference="RB0-I1-n3P"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

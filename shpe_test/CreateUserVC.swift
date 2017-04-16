@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var major:UITextField!
@@ -104,7 +106,18 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         }
         
         else{
-            performSegue(withIdentifier: "register", sender: "")
+            FIRAuth.auth()?.createUser(withEmail: email.text!+emailSuffix, password: pass1.text!, completion: { (user, error) in
+                if error == nil{
+                    if let user = user {
+                        KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                        self.performSegue(withIdentifier: "register", sender: nil)
+                    }
+                }
+                else{
+                    print("REGISTER: \(String(describing: error))")
+                }
+            })
+            
         }
     }
     

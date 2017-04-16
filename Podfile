@@ -11,5 +11,7 @@ target 'shpe_test' do
   # Pods for shpe_test
   pod 'IQKeyboardManagerSwift', '4.0.9'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'SwiftKeychainWrapper'
   
 end

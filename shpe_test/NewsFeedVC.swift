@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -45,6 +47,26 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    @IBAction func logOut(_ sender: Any) {
+    
+        if FIRAuth.auth()?.currentUser != nil {
+            
+            KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+            do{
+                try FIRAuth.auth()?.signOut()
+                let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC")
+                present(mainVC, animated: true, completion: nil)
+                
+            }catch let error as NSError{
+                print(error.localizedDescription)
+            }
+        }
+    }
+  
+    
+
+    
     /*
     // MARK: - Navigation
 
