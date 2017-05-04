@@ -13,6 +13,8 @@ import SwiftKeychainWrapper
 class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,19 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshot{
+                    print("SNAP:  \(snap)")
+                    if let postDic = snap.value as? Dictionary<String, AnyObject>{
+                       let key = snap.key
+                       let post = Post(postKey: key, postData: postDic)
+                       self.posts.append(post)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
     }
     
 
@@ -32,7 +47,7 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 296
         
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

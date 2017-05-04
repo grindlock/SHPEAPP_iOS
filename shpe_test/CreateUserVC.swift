@@ -104,12 +104,18 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             email.cornerRadius = 5
             email.borderColor = UIColor.red
         }
+            
         
         else{
             FIRAuth.auth()?.createUser(withEmail: email.text!+emailSuffix, password: pass1.text!, completion: { (user, error) in
                 if error == nil{
                     if let user = user {
                         KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+
+                        let userData = ["Fname": self.fName.text!, "Lname":self.lName.text!, "shpeNID": self.nID.text!, "academic-level":"", "major":self.major.text!,"academic-standing":self.acaStanding.text!, "email":user.email!, "phone":self.phone.text!]
+                       
+                        DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
+                        
                         self.performSegue(withIdentifier: "register", sender: nil)
                     }
                 }
