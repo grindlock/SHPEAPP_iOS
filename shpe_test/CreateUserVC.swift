@@ -3,7 +3,7 @@
 //  shpe_test
 //
 //  Created by Sergio Perez-Aponte on 2/19/17.
-//  Copyright © 2017 Sergio Perez-Aponte, Carlos Fortoul. All rights reserved.
+//  Copyright © 2017 Sergio Perez-Aponte, Carlos Fortoul, SHPE UCF. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,10 @@ import Firebase
 import SwiftKeychainWrapper
 
 class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+
+    
+    
     @IBOutlet weak var major:UITextField!
     @IBOutlet weak var acaStanding:UITextField!
     @IBOutlet weak var fName:UITextField!
@@ -20,56 +24,41 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var phone:UITextField!
     @IBOutlet weak var pass1:UITextField!
     @IBOutlet weak var pass2:UITextField!
-    var textFields = [UITextField]()
+    
+    var activeField: UITextField!
+    
     let majorOptions = ["Civil Engineering","Mechanical Engineering","Computer Engineering", "Other"]
+    
     let academicOptions = ["Freshman","Sophomore","Junior","Senior","Super Senior"]
     
     var picker:UIPickerView!
-    var i:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFields = [fName, lName, nID, major, acaStanding,email, phone, pass1, pass2 ]
-        
-        findIndexForTextField(textField: fName)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: lName)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: nID)
-        toolBar(textField: textFields[i], flag: false)
-        
+       
         let majorPicker = UIPickerView()
         majorPicker.delegate = self
         majorPicker.tag = 1
         major.inputView = majorPicker
         
         picker = majorPicker
-        findIndexForTextField(textField: major)
-        toolBar(textField: textFields[i], flag: true)
         
         let academicPicker = UIPickerView()
         academicPicker.delegate = self
         academicPicker.tag = 2
         acaStanding.inputView = academicPicker
-        findIndexForTextField(textField: acaStanding)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: email)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: phone)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: pass1)
-        toolBar(textField: textFields[i], flag: false)
-        
-        findIndexForTextField(textField: pass2)
-        toolBar(textField: textFields[i], flag: false)
-        i=0
+       
         self.becomeFirstResponder()
 
+    }
+    
+    
+    //capture the textfield that has been touch and saves a reference. Also add the toolbar to the textfield
+    func textFieldDidBeginEditing(_ textField: UITextField) -> Bool {
+        toolBar(textField: textField)
+        activeField = textField
+        
+        return true
     }
     
     @IBAction func backBtnPressed(_ sender: AnyObject) {
@@ -165,74 +154,53 @@ class CreateUserVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         }
     }
 
-    func toolBar(textField: UITextField, flag: Bool){
-        findIndexForTextField(textField: textField)
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .blackOpaque
-        toolBar.isTranslucent = false
-        toolBar.tintColor = UIColor.gray
-        //toolBar.backgroundColor = UIColor.gray
+    func toolBar(textField: UITextField ){
+        print("THE TAG TOOLBAR FUNC\(textField.tag)")
+        let toolbar =  UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.isTranslucent = true
+        toolbar.tintColor = UIColor.gray
         
-        let done = UIBarButtonItem(title:"Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
-        let keyboard = UIBarButtonItem(title:" Keyboard ", style: UIBarButtonItemStyle.plain, target: self, action: #selector(keyboardPressed))
-        let list = UIBarButtonItem(title: " Majors ", style: UIBarButtonItemStyle.plain, target: self, action: #selector(pickerPressed))
+        let prev = UIBarButtonItem(title: "< ", style: UIBarButtonItemStyle.plain, target: self, action: #selector(previousTextField))
+        
+        let next = UIBarButtonItem(title: " >", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTextField))
+        
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target:nil, action: nil)
         
-        let prev = UIBarButtonItem(title:"< ", style: UIBarButtonItemStyle.plain, target:self, action: #selector(prevButton))
-        let next = UIBarButtonItem(title:" > ", style: UIBarButtonItemStyle.plain, target:self, action: #selector(nextPressed))
+         let done = UIBarButtonItem(title:"Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
         
-        if(flag == true){
-            toolBar.setItems([prev, next,keyboard,list, space, done], animated: false)
-        }
-        else if flag == false{
-            toolBar.setItems([prev, next, space, done], animated: false)
-        }
-       
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
+        toolbar.setItems([prev, next, space, done], animated: false)
         
-        textField.inputAccessoryView = toolBar
-       
+        toolbar.isUserInteractionEnabled = true
+        toolbar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolbar
+        
+        
+        
+    }
+    
+    func previousTextField(){
+        //check if it is a valid tag
+        if activeField.tag > 0 {
+          //assigns the previous textfield to prevField from the textfield that is active
+            if let prevField = self.view.viewWithTag(activeField.tag - 1) as? UITextField {
+                prevField.becomeFirstResponder()
+            }}
+    }
+    
+    func nextTextField(){
+        //check if it is a valid tag
+        if activeField.tag < 9{
+            //assigns the next textfield to nextField from the textfield that is active
+            if let nextField = self.view.viewWithTag(activeField.tag + 1) as? UITextField {
+                nextField.becomeFirstResponder()
+            }
+        }
     }
     
     func donePressed(){
         view.endEditing(true)
     }
-    func keyboardPressed() {
-        major.text = nil
-        major.resignFirstResponder()
-        major.inputView = nil
-        major.becomeFirstResponder()
-    }
-    
-    func pickerPressed(){
-        major.resignFirstResponder()
-        major.inputView = picker
-        major.becomeFirstResponder()
-    }
-    
-    func prevButton(){
-        if(i != 0 && i >= 1 ){
-           textFields[i].resignFirstResponder()
-           i = i-1
-           textFields[i].becomeFirstResponder()
-        }
-        
-    }
-    func nextPressed(){
-        if(i < textFields.count-1){
-            textFields[i].resignFirstResponder()
-            i = i+1
-            textFields[i].becomeFirstResponder()
-        }
-    }
-    
-    func findIndexForTextField(textField: UITextField){
-      
-        i = textFields.index(of: textField)!
-        
-    }
-    
-    
-    
 }
